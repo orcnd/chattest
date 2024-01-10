@@ -1,0 +1,20 @@
+{
+    "name": "orcnd/simple_chat",
+    "description": "simple chat app with frameworkx",
+    "autoload": {
+        "psr-4": {
+            "Orcnd\\SimpleChat\\": "public_html/"
+        }
+    },
+    "authors": [
+        {
+            "name": "orçun",
+            "email": "orcuncandan89@gmail.com"
+        }
+    ],
+    "require": {
+        "clue/framework-x": "dev-main",
+        "react/mysql": "^0.7@dev",
+        "illuminate/database": "^10.40"
+    }
+}
