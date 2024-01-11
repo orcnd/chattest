@@ -1,0 +1,42 @@
+version: "3"
+services:
+  webserver:
+    image: orc/chattest
+    build: ./dockerbuild
+    volumes:
+      - ./:/var/www/
+      - ./public_html:/var/www/html/
+    ports:
+      - 8080:80
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASS: your_db_root_password
+      MYSQL_DB: db
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8
+    volumes:
+      - db3_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: your_db_root_password
+      MYSQL_USER: club360
+      MYSQL_PASSWORD: your_db_password
+    ports:
+      - '3309:3306'
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: 'always'
+    ports:
+      - 8085:80
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: your_db_root_password
+      UPLOAD_LIMIT: 300M
+
+volumes:
+  db3_data:
