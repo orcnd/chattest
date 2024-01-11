@@ -3,7 +3,7 @@
     "description": "simple chat app with frameworkx",
     "autoload": {
         "psr-4": {
-            "Orcnd\\SimpleChat\\": "public_html/"
+            "Orcnd\\SimpleChat\\": "php/"
         }
     },
     "authors": [
@@ -15,6 +15,7 @@
     "require": {
         "clue/framework-x": "dev-main",
         "react/mysql": "^0.7@dev",
-        "illuminate/database": "^10.40"
+        "illuminate/database": "^10.40",
+        "josegonzalez/dotenv": "^4.0"
     }
 }
